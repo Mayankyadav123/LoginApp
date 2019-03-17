@@ -44,7 +44,7 @@ export default class Dashboard extends Component {
                   </Fragment>
                 ) : (
                   <Link className="btn btn-info btn-block mt-4 " to="/login">
-                    Go To LogIn
+                    Go Back To LogIn
                   </Link>
                 )}
               </div>
