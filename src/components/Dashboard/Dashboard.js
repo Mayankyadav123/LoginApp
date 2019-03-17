@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+import { Link } from "react-router-dom";
+
 export default class Dashboard extends Component {
   getData() {
     var products = [
@@ -20,19 +22,31 @@ export default class Dashboard extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <p className="lead text-center">
-                  Welcome {this.props.username}
-                </p>
-                <BootstrapTable data={this.getData()}>
-                  <TableHeaderColumn isKey dataField="id">
-                    ID
-                  </TableHeaderColumn>
-                  <TableHeaderColumn dataField="name">Name</TableHeaderColumn>
-                  <TableHeaderColumn dataField="rate">rate</TableHeaderColumn>
-                  <TableHeaderColumn dataField="quality">
-                    Quanlity
-                  </TableHeaderColumn>
-                </BootstrapTable>
+                {this.props.username ? (
+                  <Fragment>
+                    <p className="lead text-center">
+                      Welcome {this.props.username}
+                    </p>
+                    <BootstrapTable data={this.getData()}>
+                      <TableHeaderColumn isKey dataField="id">
+                        ID
+                      </TableHeaderColumn>
+                      <TableHeaderColumn dataField="name">
+                        Name
+                      </TableHeaderColumn>
+                      <TableHeaderColumn dataField="rate">
+                        rate
+                      </TableHeaderColumn>
+                      <TableHeaderColumn dataField="quality">
+                        Quanlity
+                      </TableHeaderColumn>
+                    </BootstrapTable>
+                  </Fragment>
+                ) : (
+                  <Link className="btn btn-info btn-block mt-4 " to="/login">
+                    Go To LogIn
+                  </Link>
+                )}
               </div>
             </div>
           </div>
