@@ -10,7 +10,6 @@ export default class Dashboard extends Component {
       { id: 4, name: "Propane", rate: 3, quality: 2 },
       { id: 5, name: "Butane", rate: 1, quality: 1 }
     ];
-    console.log(products);
     return products;
   }
 
